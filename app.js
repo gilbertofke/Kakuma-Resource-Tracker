@@ -16,4 +16,15 @@ renderResources();
 bindEvents();
 updateCounter();
 
+};[]
+
+// In this section we demonstrate how to bind events in JS
+
+function bindEvents(){
+    form.addEventListener('submit',handleFormSubmit);
+    searchInput.addEventListener('input', handleSearch);
+    resourceList.addEventListener('click',handleRespurceClick);
+    filterButtons.forEach(btn=>{
+        btn.addEventListener('click',handleFilter);
+    });
 }
