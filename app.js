@@ -9,3 +9,11 @@ const filterButtons=document.querySelectorAll('.filter-btn');
 let resources =JSON.parse(localStorage.getItem('resources'));
 let currentFilter="All";
 let searchTerm='';
+
+//This section demonstrates how we should intialize our Javascript application
+function init(){
+renderResources();
+bindEvents();
+updateCounter();
+
+}
