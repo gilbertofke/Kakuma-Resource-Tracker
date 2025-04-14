@@ -28,3 +28,22 @@ function bindEvents(){
         btn.addEventListener('click',handleFilter);
     });
 }
+
+//This section demonstrates how to handle events in JS
+function handleFormSubmit(e){
+    e.preventDefault();
+
+const formData= new FormData(form);
+const resource ={
+    name: formData.get('resourceName').trim(),
+    type: formData.get('resourceType'),
+    location: formData.get('resourceLocation').trim(),
+    id: Date.now().toString(),
+    dateAdded: new Date().toLocaleDateString()
+};
+if(validateForm(resource)){
+    addResource(resource);
+    form.reset();
+    clearErrors();
+}
+}
