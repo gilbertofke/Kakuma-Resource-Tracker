@@ -5,4 +5,7 @@ const counter=document.getElementById('counter');
 const searchInput=document.querySelector('.search-input');
 const filterButtons=document.querySelectorAll('.filter-btn');
 
-//This section 
+//This section demonstrates how to handles state management in Javascript
+let resources =JSON.parse(localStorage.getItem('resources'));
+let currentFilter="All";
+let searchTerm='';
