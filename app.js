@@ -46,4 +46,33 @@ if(validateForm(resource)){
     form.reset();
     clearErrors();
 }
+};[];
+
+//This seection demonstrates how to implment form validation in JS
+function validateForm(resource){
+let isValid=true;
+if(!resource.name){
+    showError('nameError', 'Resource name is required');
+    isValid=false;
+}
+if(!resource.type){
+    showError('typeError', 'Resource type is required');
+    isValid=false;
+}
+if(!resource.location){
+    showError('locationError', 'Resource location is required');
+    isValid=false;
+}
+return isValid;
+
+}
+
+function showError(elementId, message){
+    const errorElement=document.getElementById(elementId);
+    errorElement.textContent=message;
+}
+function clearErrors(){
+    document.querySelectorAll('.error-message').forEach(el=>{
+        el.textContent='';
+    });
 }
